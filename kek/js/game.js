@@ -109,18 +109,18 @@ var l = 0;
 var mouseX;
 var mouseY;
 
-  function checkPos(mouseEvent){
-    if(mouseEvent.pageX || mouseEvent.pageY == 0){
-      mouseX = mouseEvent.pageX;
-      mouseY = mouseEvent.pageY;
-    }else if(mouseEvent.offsetX || mouseEvent.offsetY == 0){
-      mouseX = mouseEvent.offsetX;
-      mouseY = mouseEvent.offsetY;
+  function checkPos(touchEvent){
+    if(touchEvent.pageX || touchEvent.pageY == 0){
+      mouseX = touchEvent.pageX;
+      mouseY = touchEvent.pageY;
+    }else if(touchEvent.offsetX || touchEvent.offsetY == 0){
+      mouseX = touchEvent.offsetX;
+      mouseY = touchEvent.offsetY;
     }
 }
 
 function handleInput(dt) {
-    document.addEventListener("mousemove", checkPos);
+    document.addEventListener("touchmove", checkPos);
 
   if (player.piping || player.dying || player.noInput) return;
 
@@ -145,7 +145,7 @@ function handleInput(dt) {
     player.moveLeft();
   }
   else 
-    if ( (l==1) ||  input.isDown('RIGHT')) {
+    if ( ((mouseX < 250) && (l==1)) ||  input.isDown('RIGHT')) {
     player.moveRight();
   } 
   else {
