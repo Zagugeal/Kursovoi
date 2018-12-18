@@ -15,6 +15,11 @@ var updateables = [];
 var fireballs = [];
 var player = new Mario.Player([0,0]);
 
+var kek = new Image();
+
+kek.src = "sprites/player.png";
+
+
 canvas.width = 762;
 canvas.height = 720;
 ctx.scale(3,3);
@@ -101,6 +106,21 @@ var l = 0;
        l = 0;
   });
 
+var o = 0;
+  document.addEventListener("mousemove", checkPos);
+
+  function checkPos(mouseEvent){
+    if(mouseEvent.pageX || mouseEvent.pageY == 0){
+      mouseX = mouseEvent.pageX - this.offsetLeft;
+      mouseY = mouseEvent.pageY - this.offsetTop;
+    }else if(mouseEvent.offsetX || mouseEvent.offsetY == 0){
+      mouseX = mouseEvent.offsetX;
+      mouseY = mouseEvent.offsetY;
+    }
+    if(mouseX < 300){
+      o = 1;
+    }
+}
 
 
 function handleInput(dt) {
@@ -123,11 +143,11 @@ function handleInput(dt) {
     player.noCrouch();
   }
 
-  if ( (l==1) || (input.isDown('LEFT'))) {
-    player.moveRight();
+  if (input.isDown('LEFT')) {
+    player.moveLeft();
   }
   else 
-    if (input.isDown('RIGHT')) {
+    if ( ((o==1) && (l==1)) ||  input.isDown('RIGHT')) {
     player.moveRight();
   } 
   else {
