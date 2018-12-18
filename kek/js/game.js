@@ -129,23 +129,23 @@ function handleInput(dt) {
   } else {
     player.noRun();
   }
-  if (input.isDown('JUMP')) {
+  if (((mouseY < 360) && (l==1)) || input.isDown('JUMP')) {
     player.jump();
   } else {
     player.noJump();
   }
 
-  if (input.isDown('DOWN')) {
+  if ( ((mouseY > 360) && (l==1)) || input.isDown('DOWN')) {
     player.crouch();
   } else {
     player.noCrouch();
   }
 
-  if (input.isDown('LEFT')) {
+  if (((mouseX > 384) && (l==1)) || input.isDown('LEFT')) {
     player.moveLeft();
   }
   else 
-    if ( ((mouseX < 250) && (l==1)) ||  input.isDown('RIGHT')) {
+    if ( ((mouseX < 384) && (l==1)) ||  input.isDown('RIGHT')) {
     player.moveRight();
   } 
   else {
