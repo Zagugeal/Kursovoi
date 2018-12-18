@@ -106,25 +106,22 @@ var l = 0;
        l = 0;
   });
 
-var o = 0;
-
-  document.addEventListener("mousemove", checkPos);
+var mouseX;
+var mouseY;
 
   function checkPos(mouseEvent){
     if(mouseEvent.pageX || mouseEvent.pageY == 0){
-      mouseX = mouseEvent.pageX - this.offsetLeft;
-      mouseY = mouseEvent.pageY - this.offsetTop;
+      mouseX = mouseEvent.pageX;
+      mouseY = mouseEvent.pageY;
     }else if(mouseEvent.offsetX || mouseEvent.offsetY == 0){
       mouseX = mouseEvent.offsetX;
       mouseY = mouseEvent.offsetY;
     }
-    if(mouseX != null){
-      alert("Anime");
-    }
 }
 
-
 function handleInput(dt) {
+    document.addEventListener("mousemove", checkPos);
+
   if (player.piping || player.dying || player.noInput) return;
 
   if (input.isDown('RUN')){
@@ -148,7 +145,7 @@ function handleInput(dt) {
     player.moveLeft();
   }
   else 
-    if ( (l==1) ||  input.isDown('RIGHT')) {
+    if ( ((mouseX < 250) && (l==1)) ||  input.isDown('RIGHT')) {
     player.moveRight();
   } 
   else {
