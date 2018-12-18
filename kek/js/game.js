@@ -107,6 +107,7 @@ var l = 0;
   });
 
 var o = 0;
+
   document.addEventListener("mousemove", checkPos);
 
   function checkPos(mouseEvent){
@@ -117,8 +118,8 @@ var o = 0;
       mouseX = mouseEvent.offsetX;
       mouseY = mouseEvent.offsetY;
     }
-    if(mouseX < 300){
-      o = 1;
+    if(mouseX != null){
+      alert("Anime");
     }
 }
 
@@ -147,7 +148,7 @@ function handleInput(dt) {
     player.moveLeft();
   }
   else 
-    if ( ((o==1) && (l==1)) ||  input.isDown('RIGHT')) {
+    if ( (l==1) ||  input.isDown('RIGHT')) {
     player.moveRight();
   } 
   else {
