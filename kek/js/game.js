@@ -20,7 +20,7 @@ var kek = new Image();
 kek.src = "sprites/player.png";
 
 
-canvas.width = 762;
+canvas.width = 540;
 canvas.height = 720;
 ctx.scale(3,3);
 document.body.appendChild(canvas);
