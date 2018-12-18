@@ -94,12 +94,14 @@ function update(dt) {
 }
 
 var l = 0;
-     document.addEventListener('mousedown', function(e) {
+     document.addEventListener("touchstart", function(e) {
        l = 1;
   });
-          document.addEventListener('mouseup', function(e) {
+          document.addEventListener("touchend", function(e) {
        l = 0;
   });
+
+
 
 function handleInput(dt) {
   if (player.piping || player.dying || player.noInput) return;
