@@ -145,7 +145,7 @@ function handleInput(dt) {
     player.moveLeft();
   }
   else 
-    if ( ((mouseX < 250) && (l==1)) ||  input.isDown('RIGHT')) {
+    if ( (l==1) ||  input.isDown('RIGHT')) {
     player.moveRight();
   } 
   else {
