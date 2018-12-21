@@ -29,7 +29,11 @@ var example = document.getElementById("example"),
       pic.onload = function() {
         ctx.drawImage(pic, 0, 0,762,720);
       }
-
+  
+     document.addEventListener("touchstart", function(e) {
+      window.open("../index.html","_self");
+  });
+  
 function moveRect(e){
     switch(e.keyCode){
         case 70:
