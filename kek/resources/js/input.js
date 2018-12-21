@@ -4,7 +4,7 @@
     function setKey(event, status) {
         var code = event.keyCode;
         var key;
-        var mouse = this;
+
         switch(code) {
         case 32:
             key = 'SPACE'; break;
@@ -33,9 +33,6 @@
 
     document.addEventListener('keyup', function(e) {
         setKey(e, false);
-    });
-    document.addEventListener('mousedown', function(e, setKey) {
-     key ='RIGHT';
     });
 
     window.addEventListener('blur', function() {

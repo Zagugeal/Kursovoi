@@ -15,12 +15,7 @@ var updateables = [];
 var fireballs = [];
 var player = new Mario.Player([0,0]);
 
-var kek = new Image();
-
-kek.src = "sprites/player.png";
-
-
-canvas.width = 540;
+canvas.width = 762;
 canvas.height = 720;
 ctx.scale(3,3);
 document.body.appendChild(canvas);
@@ -71,6 +66,8 @@ function init() {
 }
 
 var gameTime = 0;
+
+
 
 var TimerTime = 1;
 var timeras = setTimeout(function go() {
@@ -247,9 +244,6 @@ function render() {
     renderEntity(pipe);
           ctx.fillStyle = ("white");
  ctx.fillText("Coins: " + player.coins, 210, 20);
-	
-	 ctx.fillText("Time: " + TimerTime, 10, 20);
-           ctx.fillStyle = ("white");
  ctx.fillText("Time: " + TimerTime, 10, 20);
   });
 }
