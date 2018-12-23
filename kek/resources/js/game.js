@@ -15,8 +15,8 @@ var updateables = [];
 var fireballs = [];
 var player = new Mario.Player([0,0]);
 
-canvas.width = 662;
-canvas.height = 720;
+canvas.width = 762;
+canvas.height = 520;
 ctx.scale(3,3);
 document.body.appendChild(canvas);
 var vX = 0,
